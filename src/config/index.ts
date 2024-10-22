@@ -9,6 +9,9 @@ const envVarsZodSchema = z.object({
   REDIS_URL: z.string(),
   AUTH_SERVICE: z.string(),
   CORE_SERVICE: z.string(),
+  CLOUDINARY_NAME: z.string(),
+  CLOUDINARY_API_KEY: z.string(),
+  CLOUDINARY_API_SECRET: z.string(),
   PORT: z
     .string()
     .default('3030')
@@ -26,5 +29,10 @@ export default {
   redisURL: envVars.REDIS_URL,
   jwt: {
     secret: envVars.JWT_SECRET
+  },
+  cloudinary: {
+    name: envVars.CLOUDINARY_NAME,
+    apiKey: envVars.CLOUDINARY_API_KEY,
+    secret: envVars.CLOUDINARY_API_SECRET
   }
 };
